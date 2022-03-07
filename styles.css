@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root{
+	--bg-clr: #fbcb6c;
+	--white: #fff;
+	--srch-bg: #66b03d;
+	--text-clr: #b5b5b5;
+	--srch-hvr: #61cc26;
+	--close-hvr: #d2ffb9;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	list-style: none;
+	font-family: 'Open Sans', sans-serif;
+}
+
+::placeholder { 
+  color: var(--text-clr);
+  opacity: 1;
+}
+
+body{
+	background: var(--bg-clr);
+}
+
+.wrapper{
+	display: flex;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.search_box_wrap{
+	position: relative;
+	width: 350px;
+	height: 60px;
+}
+
+.search_box_wrap .search_box{
+	width: 100%;
+	height: 60px;
+}
+
+.search_box_wrap .search_box .input_search{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	border: 0;
+	height: 60px;
+	padding: 12px 0px;
+	padding-right: 60px;
+	font-size: 16px;
+	border-radius: 35px;
+	color: var(--text-clr);
+	transition: all 0.2s ease;
+}
+
+.search_box_wrap .icon{
+	display: flex;
+}
+
+.search_box_wrap .search_btn,
+.search_box_wrap .close_btn{
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+
+.search_box_wrap .search_btn{
+	color: var(--white);
+	background: var(--srch-bg);
+	top: 0;
+	right: 0px;
+	font-size: 20px;
+	z-index: 999;
+}
+
+.search_box_wrap .close_btn{
+	color: var(--srch-bg);
+	background: var(--white);
+	top: 0px;
+	right: 0px;
+    font-size: 25px;
+    opacity: 0;
+}
+
+.search_box_wrap .search_btn:hover{
+	background: var(--srch-hvr);
+}
+
+.search_box_wrap .close_btn:hover{
+	background: var(--close-hvr);
+}
+
+.search_box_wrap.active .search_btn{
+	top: 5px;
+	right: 5px;
+	width: 50px;
+	height: 50px;
+}
+
+.search_box_wrap.active .close_btn{
+	opacity: 1;
+  	transform: rotate(360deg);
+  	right: -90px;
+}
+
+.search_box_wrap.active .search_box .input_search{
+	padding: 12px 25px;
+	padding-right: 70px;
+  	width: 100%;
+  	transition: all 0.5s ease;
+	transition-delay: 0.75s;
+}
